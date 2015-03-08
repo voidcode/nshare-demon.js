@@ -10,7 +10,7 @@ RestServer / httpServer runs by default on port 12340.
 2. Then do: `npm install nshare-demon`
 3. Start the demon: `node nshare-demon.js`
 
-#Run `nshare-demon.js` as background-demon with PM2 or (forever, monit).
+#Run nshare-demon.js as background-demon with PM2.
 
 1. `npm install -g pm2`
 2. `pm2 start nshare-demon.js`
@@ -28,6 +28,6 @@ RestServer / httpServer runs by default on port 12340.
 
 [nshare-chrome-extension](https://chrome.google.com/webstore/detail/nshare/lecapbjobhaloanokngngalcngdpklcf)
 
-[nshare-chrome-extension](https://play.google.com/store/apps/details?id=com.voidcode.nshare)
+[nshare-on-android](https://play.google.com/store/apps/details?id=com.voidcode.nshare)
 
 
