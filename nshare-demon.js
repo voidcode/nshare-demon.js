@@ -1,6 +1,6 @@
 var NSHAREDATAFILE = 'nsharedata.json';
-NSHARE_API_PORT = 12340
-UDPSERVER_PORT = 12345;
+var NSHARE_API_PORT = 12340
+var UDPSERVER_PORT = 12345;
 var trim = require('trim');
 var fs = require('fs');
 
@@ -12,6 +12,19 @@ var server = restify.createServer({
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
+
+if(process.argv[2] != undefined && process.argv[3] != undefined){
+	switch(process.argv[2]){
+		case "--rest-port": 
+			NSHARE_API_PORT = parseInt(process.argv[3]);
+			console.log('Change rest-port to:'+UDPSERVER_PORT);
+		break;
+		case "--udp-port":
+			UDPSERVER_PORT = parseInt(process.argv[3]);
+			console.log('Change udp-port to:'+UDPSERVER_PORT);
+		break;
+	}
+}
 
 //UDP-SERVER--------------------------------------------------------------START
 var dgram = require("dgram");
@@ -43,7 +56,7 @@ udpServer.on("message", function (msg, rinfo) {
 });
 udpServer.on("listening", function () {
 	var address = udpServer.address();
-	console.log("PacketServer is running on port " +
+	console.log("UdpServer is running on port " +
 	address.address + ":" + address.port);
 });
 udpServer.bind(UDPSERVER_PORT);
@@ -51,7 +64,7 @@ udpServer.bind(UDPSERVER_PORT);
 
 
 server.get('/help', function(req, res, next){
-	fs.readFile('howto.html', 'utf8', function(err, data){
+	fs.readFile('README.md', 'utf8', function(err, data){
 		if(err) res.send(500);
 		else res.send(data);
 	});
@@ -112,7 +125,7 @@ server.post('/nshare/clear', function(req, res, next){
 });
 
 server.listen(NSHARE_API_PORT, function(){
-	console.log('%s running at %s', server.name, server.url);
+	console.log('RestServer is running on port: %s', server.url);
 });	
 
 

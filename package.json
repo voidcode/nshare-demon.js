@@ -1,7 +1,7 @@
 {
-  "name": "nshare-demon.js",
+  "name": "nshare-demon",
   "version": "0.0.1",
-  "description": "This is the Nshare nodejs backgrund-service / demon.",
+  "description": "This is the Nshare backgrund-demon make for nodejs.",
   "main": "nshare-demon.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,11 +12,18 @@
     "type": "git",
     "url": "https://github.com/voidcode/nshare-demon.js.git"
   },
+  "bugs": {
+    "url": "https://github.com/voidcode/nshare-demon.js/issues"
+  },
   "dependencies": {
   	"fs": "*",
   	"udp": "*",
   	"restify": "*",
   	"trim": "*",
   	"path": "*"
-  }
+  },
+  "keywords": [
+    "nshare-demon",
+    "nshare"
+  ]
 }
