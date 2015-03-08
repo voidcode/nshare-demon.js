@@ -2,12 +2,14 @@
 
 A background demon for the nshare project.
 
-This an receive packet from other nshare-apps.
+This can receive packet from other nshare-apps.
 
-Try install demon and [nshare-chrome-extension](https://chrome.google.com/webstore/detail/nshare/lecapbjobhaloanokngngalcngdpklcf)
+Try install this demon,
+
+And [nshare-chrome-extension](https://chrome.google.com/webstore/detail/nshare/lecapbjobhaloanokngngalcngdpklcf)
 
 Then you can get urls or text over lan/wifi in your chrome-browser.
- 
+
 
 PacketServer / udpServer runs by default on port 12345.
 
