@@ -4,7 +4,9 @@
   "description": "This is the Nshare backgrund-demon make for nodejs.",
   "main": "nshare-demon.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start nshare-demon.js",
+    "stop": "pm2 stop nshare-demon.js"
   },
   "author": "voidcode",
   "license": "MIT",
@@ -20,7 +22,8 @@
   	"udp": "*",
   	"restify": "*",
   	"trim": "*",
-  	"path": "*"
+  	"path": "*",
+    "pm2": "*"
   },
   "keywords": [
     "nshare-demon",

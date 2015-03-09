@@ -30,6 +30,7 @@ if(process.argv[2] != undefined && process.argv[3] != undefined){
 var dgram = require("dgram");
 var udpServer = dgram.createSocket("udp4");
 udpServer.on("message", function (msg, rinfo) {
+	debugger;
 	console.log("[udp-server] got: " + msg + " from " + rinfo.address + ":" + rinfo.port);
     var fromip = rinfo.address;
     var url = trim(msg.toString());
