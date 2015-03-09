@@ -13,24 +13,24 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-if(process.argv[2] != undefined && process.argv[3] != undefined){
-	switch(process.argv[2]){
-		case "--rest-port": 
-			NSHARE_API_PORT = parseInt(process.argv[3]);
-			console.log('Change rest-port to:'+UDPSERVER_PORT);
-		break;
-		case "--udp-port":
-			UDPSERVER_PORT = parseInt(process.argv[3]);
-			console.log('Change udp-port to:'+UDPSERVER_PORT);
-		break;
+if(process.argv[2] != undefined){
+	var userArgv = process.argv.slice(2);
+	if(userArgv.indexOf("--rest-port") > -1){ 
+		NSHARE_API_PORT = parseInt(userArgv[userArgv.indexOf("--rest-port")+1]);
+		console.log('Change rest-port to:'+UDPSERVER_PORT);
 	}
+	if(userArgv.indexOf("--udp-port") > -1){
+		UDPSERVER_PORT = parseInt(userArgv[userArgv.indexOf("--udp-port")+1]);
+		console.log('Change udp-port to:'+UDPSERVER_PORT);
+	}
+} else {
+	console.log('NB: you can changes port with: --rest-port <PORT> OR --udp-port <PORT> ');
 }
 
 //UDP-SERVER--------------------------------------------------------------START
 var dgram = require("dgram");
 var udpServer = dgram.createSocket("udp4");
 udpServer.on("message", function (msg, rinfo) {
-	debugger;
 	console.log("[udp-server] got: " + msg + " from " + rinfo.address + ":" + rinfo.port);
     var fromip = rinfo.address;
     var url = trim(msg.toString());
