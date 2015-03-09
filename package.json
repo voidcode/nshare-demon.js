@@ -1,7 +1,7 @@
 {
   "name": "nshare-demon",
-  "version": "0.0.1",
-  "description": "This is the Nshare backgrund-demon make for nodejs.",
+  "version": "0.0.2",
+  "description": "This is the Nshare backgrund-demon.",
   "main": "nshare-demon.js",
   "scripts": {
     "start": "pm2 start nshare-demon.js",
@@ -22,7 +22,7 @@
   	"restify": "*",
   	"trim": "*",
   	"path": "*",
-    "pm2": "*"
+        "pm2": "*"
   },
   "keywords": [
     "nshare-demon",
