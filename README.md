@@ -2,43 +2,36 @@
 
 A background demon for the nshare project.
 
-This can receive packet from other nshare-apps.
-
-Try install this demon,
-
-And [nshare-chrome-extension](https://chrome.google.com/webstore/detail/nshare/lecapbjobhaloanokngngalcngdpklcf)
-
-Then you can get urls or text over lan/wifi in your chrome-browser.
-
-
-PacketServer / udpServer runs by default on port 12345.
-
-RestServer / httpServer runs by default on port 12340.
+This can receive packets from other nshare-apps.
 
 #How to install.
 
 1. Install NodeJS(https://nodejs.org/download/)
-2. Then do: `npm install nshare-demon`
-3. Start the demon: `node nshare-demon.js`
+2. Then do: `npm install nshare-demon -g`
 
-#Run nshare-demon.js as background-demon with PM2.
+#Start it.
 
-1. `npm install -g pm2`
-2. `pm2 start nshare-demon.js`
+Ubuntu.
+3.cd `/usr/local/lib/node_modules/nshare-demon && sudo npm start`
 
+Then you are DONE.. :)
+
+
+Now to can try the [nshare-chrome-extension](https://chrome.google.com/webstore/detail/nshare/lecapbjobhaloanokngngalcngdpklcf)
 
 #How to use the nshare-demon.js rest API.
 
-1. (GET) [URL]:12340/packets -> get all packet send to this nshare client.
-	
-2. (POST) [URL]:12340/clear -> Delete all packet send to this nshare client.
+RestServer / httpServer runs by default on port 12340.
 
-3. (POST) [URL]:12340 with key and value(fromip, url) -> new create a new packet.
+(GET) [URL]:12340/packets -> get all packet send to this nshare client.
+	
+(POST) [URL]:12340/clear -> Delete all packet send to this nshare client.
+
+(POST) [URL]:12340 with key and value(fromip, url) -> new create a new packet.
+
 
 #Other related apps.
 
 [nshare-chrome-extension](https://chrome.google.com/webstore/detail/nshare/lecapbjobhaloanokngngalcngdpklcf)
 
 [nshare-on-android](https://play.google.com/store/apps/details?id=com.voidcode.nshare)
-
-
