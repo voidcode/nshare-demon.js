@@ -11,11 +11,18 @@ This can receive packets from other nshare-apps.
 
 #Start it.
 
+Windows.
+
+Start->Run->Cmd (Run as admin)
+
+`cd %APPDATA%\npm\node_modules\nshare-demon && npm start`
+
 Ubuntu.
-3.cd `/usr/local/lib/node_modules/nshare-demon && sudo npm start`
+`cd /usr/local/lib/node_modules/nshare-demon && sudo npm start`
 
-Then you are DONE.. :)
 
+
+...Then you are DONE.. :)
 
 Now to can try the [nshare-chrome-extension](https://chrome.google.com/webstore/detail/nshare/lecapbjobhaloanokngngalcngdpklcf)
 
